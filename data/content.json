@@ -1,222 +1,384 @@
 {
   "navbar": {
-    "logoTagline": "The Steel Hub",
+    "logoTagline": "Trial",
     "navLinks": [
-      { "href": "#about", "label": "About" },
-      { "href": "#products", "label": "Products" },
-      { "href": "#brands", "label": "Brands" },
-      { "href": "#cases", "label": "Case Studies" },
-      { "href": "#clients", "label": "Clients" }
+      {
+        "href": "#about",
+        "label": "About"
+      },
+      {
+        "href": "#services",
+        "label": "Services"
+      },
+      {
+        "href": "#listings",
+        "label": "Listings"
+      },
+      {
+        "href": "#cases",
+        "label": "Success Stories"
+      },
+      {
+        "href": "#clients",
+        "label": "Testimonials"
+      }
     ],
-    "ctaLabel": "Contact Us"
+    "ctaLabel": "Schedule a Tour"
   },
   "categories": [
     {
-      "label": "Flat Products",
-      "title": "Plates, Sheets\n& Coils",
-      "img": "/products/ms-hrc-plate.jpeg",
-      "desc": "HRC plates, CRC sheets, GP plates and coils for heavy fabrication."
+      "label": "Buyer Services",
+      "title": "Find Your\nDream Home",
+      "img": "https://source.unsplash.com/1600x900/?business%2Coffice%2Cprofessional&sig=0",
+      "desc": "Expert guidance through property search, market analysis, and personalized home matching to find your perfect property."
     },
     {
-      "label": "Structural Steel",
-      "title": "Angles, Beams\n& Channels",
-      "img": "/products/beams.jpeg",
-      "desc": "I-beams, H-beams, angles, channels and TMT bars for load-bearing structures."
+      "label": "Seller Services",
+      "title": "Maximize Your\nProperty Value",
+      "img": "https://source.unsplash.com/1600x900/?team%2Cmeeting%2Ccorporate&sig=1",
+      "desc": "Strategic marketing, professional staging consultation, offer negotiation, and closing coordination for optimal sale results."
     },
     {
-      "label": "Roofing & Sheets",
-      "title": "Roofing &\nCladding",
-      "img": "/products/colour-coated-sheets.jpeg",
-      "desc": "GI corrugated, colour-coated, polycarbonate and deck sheets for all roofing needs."
+      "label": "Market Expertise",
+      "title": "Local Insights\n& Trends",
+      "img": "https://source.unsplash.com/1600x900/?city%2Cbuilding%2Cmodern&sig=2",
+      "desc": "Deep neighborhood knowledge, market analysis, and investment guidance across residential and commercial properties."
     }
   ],
   "theme": {
-    "primary": "#4A6FA5",
-    "primaryDark": "#2D5585",
-    "secondary": "#1B2A3B",
-    "secondaryLight": "#243550"
+    "primary": "#3B82F6",
+    "primaryDark": "#3B82F6",
+    "secondary": "#1E40AF",
+    "secondaryLight": "#1E40AF",
+    "accent": "#93C5FD",
+    "accentLight": "#93C5FD"
   },
   "branding": {
     "logoUrl": "",
-    "logoText": "NAMO STEEL",
-    "headingFont": "Inter",
+    "logoText": "Trial",
+    "headingFont": "Syne",
     "bodyFont": "Inter",
-    "selectedPalette": "steel-midnight"
+    "selectedPalette": "cool-professional"
   },
   "hero": {
-    "badge": "SINCE 1995",
-    "title": "Steel Solutions for\nSolid Foundations.",
-    "subtitle": "Crafting the Backbone of Industry.",
-    "phone": "+91 98604 89490",
-    "ctaText": "Explore Products",
+    "badge": "TRUSTED BROKERAGE",
+    "title": "Simplifying Real Estate\nTransactions for You.",
+    "subtitle": "Expert guidance, transparent pricing, innovative technology.",
+    "phone": "814-163-3333",
+    "ctaText": "Get in Touch",
     "stats": [
-      { "num": "30+", "label": "Years Experience" },
-      { "num": "15+", "label": "Brands" },
-      { "num": "ISI", "label": "Certified Products" }
+      {
+        "num": "500+",
+        "label": "Homes Sold"
+      },
+      {
+        "num": "4.5★",
+        "label": "Client Rating"
+      },
+      {
+        "num": "100%",
+        "label": "Transparent Process"
+      }
     ]
   },
   "about": {
-    "sectionLabel": "About Our Company",
-    "heading": "Your Trusted Partner in Steel & Structure.",
-    "description": "We are trusted dealers in construction and industrial steel products, serving the industry for over 30 years. Known for quality, reliability, and competitive pricing, we supply ISI-certified steel with assured strength and precision. Backed by strong manufacturer tie-ups, we ensure timely delivery and customer satisfaction across every order.",
+    "sectionLabel": "About Trial Brokerage",
+    "heading": "Transforming Real Estate Through Innovation & Trust.",
+    "description": "Trial was founded to revolutionize how people buy and sell real estate. We recognized that traditional brokerage practices lacked transparency and left clients frustrated. Today, we empower buyers, sellers, and agents with modern technology, expert market knowledge, and personalized service. Our commitment to integrity, efficiency, and client-first service has made us the trusted choice across the greater metropolitan area.",
     "checklist": [
-      "ISI-Certified, High-Strength Products",
-      "Wide Product Range",
-      "30+ Years of Industry Trust"
+      "Transparent Pricing & No Hidden Fees",
+      "Expert Market Analysis & Guidance",
+      "Advanced Digital Tools & Technology"
     ],
-    "vision": "To deliver superior-quality steel solutions that consistently exceed customer expectations through innovation, service excellence, and long-term partnerships.",
-    "mission": "To build lasting relationships by offering exceptional service, embracing technology, and supporting every customer's steel requirement with integrity and expertise."
+    "vision": "To be the leading modern real estate brokerage that transforms property transactions through transparency, innovation, and exceptional client relationships.",
+    "mission": "To deliver expert property solutions and exceptional service by providing transparent transactions, deep market expertise, and personalized support that helps clients achieve their real estate goals efficiently and confidently."
   },
   "why": {
-    "sectionLabel": "Why Choose Us?",
-    "heading": "Reasons to Partner with Namo Steel",
+    "sectionLabel": "Why Choose Trial?",
+    "heading": "What Sets Trial Apart",
     "items": [
-      { "title": "30+ Years of Industry Experience" },
-      { "title": "ISI-Certified, High-Strength Products" },
-      { "title": "Strong Manufacturer Partnerships" },
-      { "title": "Fast, On-Time Delivery" },
-      { "title": "Competitive Pricing" },
-      { "title": "Wide Product Range Under One Roof" }
+      {
+        "title": "Transparent Pricing & Complete Cost Clarity"
+      },
+      {
+        "title": "Expert Agents with Deep Local Market Knowledge"
+      },
+      {
+        "title": "Advanced Technology & Digital Tools"
+      },
+      {
+        "title": "Comprehensive Transaction Coordination"
+      },
+      {
+        "title": "Client-Focused Service & Personalized Guidance"
+      },
+      {
+        "title": "Professional Network of Inspectors, Appraisers & Attorneys"
+      }
     ]
   },
   "certifications": {
-    "sectionLabel": "Our Certifications & Partners",
-    "heading": "Quality You Can Trust",
+    "sectionLabel": "Our Standards & Credentials",
+    "heading": "Professionalism You Can Trust",
     "items": [
-      { "num": "01", "title": "All Products are ISI Certified" },
-      { "num": "02", "title": "Sourced from Top-Tier Manufacturers" },
-      { "num": "03", "title": "Strict Quality Control for Strength, Shape, Gauge & Bonding" }
+      {
+        "num": "01",
+        "title": "Licensed Real Estate Professionals"
+      },
+      {
+        "num": "02",
+        "title": "Ethical Conduct & Full Transparency"
+      },
+      {
+        "num": "03",
+        "title": "Comprehensive Market Data & Analysis"
+      }
     ]
   },
   "services": {
-    "sectionLabel": "Service Excellence",
-    "heading": "Delivering Beyond Expectations",
+    "sectionLabel": "Our Services",
+    "heading": "Complete Real Estate Solutions",
     "items": [
       {
-        "title": "Fast & On-Time Delivery",
-        "desc": "We understand project timelines. Our logistics ensure your material arrives exactly when you need it."
+        "title": "Buyer Representation",
+        "desc": "We guide buyers through property search, market analysis, offer negotiation, and closing coordination to secure the right home at the right price."
       },
       {
-        "title": "High Accuracy in Order Fulfillment",
-        "desc": "Precise quantities, correct grades, and verified dimensions on every single order."
+        "title": "Seller Representation",
+        "desc": "Our sellers benefit from strategic marketing, expert pricing guidance, professional showing coordination, and skilled negotiation to maximize property value."
       },
       {
-        "title": "Technical Support & Customized Solutions",
-        "desc": "Our experts help you choose the right product and can supply made-to-order specifications."
+        "title": "Property Search & Matching",
+        "desc": "Using advanced digital tools and local expertise, we identify properties that match your specific needs, investment goals, and lifestyle preferences."
       }
     ]
   },
   "brands": [
-    "ROOPAM STEEL", "TATA STEEL", "SAIL (सेल)", "VIZAG STEEL",
-    "PUSHPA TMX 500", "RAJURI STEEL", "BHUSHAN POWER & STEEL",
-    "SHREE OM 500 TMT", "RAMA STEEL", "ICON STEEL TMT REBAR",
-    "APL APOLLO", "UMA 550 TMT BARS", "KALIKA STEEL", "GSPL 500 TMT", "JSW STEEL"
+    "Downtown District Specialists",
+    "Suburban Community Experts",
+    "Commercial Property Advisors",
+    "Investment Analysis Team",
+    "Residential Property Services",
+    "Off-Market Opportunity Network",
+    "Property Management Consultants",
+    "Transaction Coordination Division",
+    "Market Research & Analysis Unit",
+    "Closing Services Team",
+    "Appraisal & Valuation Partners",
+    "Home Inspection Connections",
+    "Title Services Network",
+    "Negotiation Specialists",
+    "New Construction Advisors"
   ],
   "caseStudies": [
     {
       "num": "01",
-      "title": "Industrial Packers",
-      "client": "Client: Gaurav",
-      "project": "Custom Skids from Chequered Plates",
-      "desc": "We designed and supplied custom-made skids from chequered plates to securely transport engines. The skids were precisely engineered for a perfect fit, ensuring safe transport and reusability for up to 5 years. With a 7-year track record of supplying quality raw materials like channels & plates, we delivered a durable, returnable solution that met all requirements for accuracy, strength, and ease of handling."
+      "title": "Downtown Loft Sale",
+      "client": "Client: Sarah & Michael Chen",
+      "project": "Luxury Urban Property Transition",
+      "desc": "Sarah and Michael needed to sell their downtown loft quickly while finding a home in the suburbs with good schools. Trial's agents provided comparative market analysis, positioned the property strategically, and coordinated multiple offers within two weeks. Simultaneously, we identified and negotiated the purchase of their new family home, ensuring smooth timing on both transactions."
     },
     {
       "num": "02",
-      "title": "Omkar Industries",
-      "client": "Client: Omkar Joshi (Owner)",
-      "project": "Custom-Dimension CRC Sheets",
-      "desc": "Omkar Industries required made-to-order CRC sheets in precise dimensions: 435 × 1250 × 1.5 mm and 353 × 1250 × 1.5 mm. They needed sheets with exact measurements, high-quality finish, scratch-free surfaces, no rust, and secure packaging. We delivered perfectly matched material meeting all quality standards."
+      "title": "First-Time Homebuyer Success",
+      "client": "Client: Jessica Martinez",
+      "project": "Navigating the Buying Process",
+      "desc": "Jessica was overwhelmed by the home buying process and unfamiliar with neighborhood values. Our agents provided patient guidance on financing options, conducted detailed property walkthroughs, explained inspection reports, and negotiated favorable terms. Jessica successfully purchased her first home within budget while avoiding common pitfalls."
     },
     {
       "num": "03",
-      "title": "Patil Automation Limited",
-      "client": "6-Year Partnership",
-      "project": "Plates, Angles, Channels & CRC Sheets",
-      "desc": "Referred by BNI member Shashi Ji, we began supplying plates, angles, channels, CRC sheets and more to Patil Automation Limited six years ago. Our quality and timely service have made this a lasting partnership that continues today."
+      "title": "Investment Property Placement",
+      "client": "5-Property Portfolio Growth",
+      "project": "Commercial & Residential Investment Strategy",
+      "desc": "An experienced investor approached Trial seeking to build a diversified portfolio across residential and commercial properties. Our team provided market analysis, identified undervalued properties, negotiated acquisition terms, and coordinated lease arrangements. The client successfully expanded their portfolio by 40% within one year."
     },
     {
       "num": "04",
-      "title": "Convill Landmark",
-      "client": "₹10 Crore Project",
-      "project": "PMC Bars for Entire Development",
-      "desc": "Through a strong referral from BNI members Kareem Chambe and Omkar, we connected with Convill Landmark. This recommendation led to a ₹10 crore project, where we supplied PMC bars for the entire development."
+      "title": "Estate Settlement Execution",
+      "client": "Johnson Family Estate",
+      "project": "Multi-Property Liquidation & Management",
+      "desc": "Following a family passing, heirs needed to manage the sale of three inherited properties across different neighborhoods. Trial coordinated the entire process, from property valuations to marketing, showings, and closings. All properties sold within market timeframes, and the estate was efficiently settled."
     },
     {
       "num": "05",
-      "title": "Doodh Techno Projects",
-      "client": "3-Year Partnership",
-      "project": "TMT Bars & Structural Steel",
-      "desc": "Referred by member Shubham, we have been supplying TMT bars and structural steel to Doodh Techno Projects for the past three years, ensuring consistent quality and timely delivery."
+      "title": "Corporate Relocation Program",
+      "client": "Tech Company Expansion",
+      "project": "20-Employee Housing Coordination",
+      "desc": "A growing tech firm relocated 20 employees to the metro area. Trial managed comprehensive relocation services, including neighborhood orientation, property tours, and negotiated lease and purchase terms. Every employee secured appropriate housing, building loyalty and reducing turnover."
     },
     {
       "num": "06",
-      "title": "Praveen Rawat & Associates",
-      "client": "3-Year Partnership",
-      "project": "TMT Bars for Modern College Contractors",
-      "desc": "Referred by member Sandeep Shah, we began supplying TMT bars to Praveen Rawat and Associates, contractors for Modern College, for the past three years."
+      "title": "Market Downturn Strategy",
+      "client": "HomeOwner Adaptation",
+      "project": "Strategic Pricing & Extended Marketing",
+      "desc": "During a softer market, a homeowner faced declining property values. Trial repositioned the property with professional photography, refined pricing strategy, and targeted marketing campaigns. Despite market challenges, the property sold for 98% of list price in 45 days."
     }
   ],
   "clients": [
-    "Abhiyanta PMC Pvt Ltd", "Matchwell Engineering Pvt Ltd",
-    "Darsheel Construction", "Mahati Industries Pvt Ltd",
-    "Elements Technofabs Pvt Ltd", "Omkar Industries",
-    "Konbil Landmarks", "Patil Automation",
-    "Industrial Packers", "Pravin Raut & Associates",
-    "Innoova Construction", "Q Point Engineering",
-    "Surich Industries", "Scon Projects"
+    "Metropolitan Trust Company",
+    "City Development Corporation",
+    "Urban Living Collective",
+    "Suburban Growth Advisors",
+    "Regional Investment Partners",
+    "Commercial Real Estate Associates",
+    "Residential Solutions Group",
+    "Property Management Plus",
+    "Home Buyer Advisory Network",
+    "Estate Planning Services",
+    "Corporate Relocation Specialists",
+    "Community Development Partners",
+    "First-Time Buyer Program",
+    "Luxury Property Collective"
   ],
   "contact": {
     "sectionLabel": "Get In Touch",
-    "heading": "Let's Build Something Strong Together",
-    "subheading": "Reach out to us for inquiries, quotes, or customized steel solutions. We're ready to serve your project needs.",
-    "phone": "+91 98604 89490",
-    "email": "namotradelink@gmail.com",
-    "address": "Office No. 801, Apex Business Court,\nNear Gangadham, Pune 411037",
-    "businessType": "Iron & Steel Merchants"
+    "heading": "Ready to Start Your Real Estate Journey?",
+    "subheading": "Contact Trial today for personalized guidance on buying, selling, or leasing your next property. Our team is here to simplify the process.",
+    "phone": "814-163-3333",
+    "email": "info@trialbrokerage.com",
+    "address": "Trial Brokerage Office\nMetropolitan Tower, Suite 450\nGreater Metropolitan Area",
+    "businessType": "Real Estate Brokerage"
   },
   "footer": {
-    "brandName": "NAMO STEEL",
-    "tagline": "Trusted dealers in construction and industrial steel products since 1995. Serving the industry with quality, reliability, and competitive pricing.",
-    "presentedBy": "Pratik Khivsara",
-    "presentedEmail": "namotradelink@gmail.com",
-    "presentedPhone": "+91 98604 89490",
-    "copyright": "© 2025 Namo Steel. All rights reserved. | Iron & Steel Merchants Since 1995"
+    "brandName": "Trial",
+    "tagline": "Modern real estate brokerage dedicated to simplifying home buying and selling through transparent pricing, expert guidance, and innovative technology solutions.",
+    "presentedBy": "Trial Brokerage Team",
+    "presentedEmail": "info@trialbrokerage.com",
+    "presentedPhone": "814-163-3333",
+    "copyright": "© 2026 Trial. All rights reserved.",
+    "ctaText": "Get in Touch"
   },
   "products": {
-    "sectionLabel": "Our Product Range",
-    "heading": "Steel Solutions for Every Need",
+    "sectionLabel": "Property Listings",
+    "heading": "Featured Properties in Our Market",
     "flat": [
-      { "title": "M.S-HRC Plate", "desc": "Hot rolled coil plates for heavy construction & fabrication.", "img": "/products/ms-hrc-plate.jpeg" },
-      { "title": "CRC Plate", "desc": "Cold rolled plates with smooth finish and precision thickness.", "img": "/products/crc-plate.jpeg" },
-      { "title": "Sheet", "desc": "Versatile steel sheets for industrial and structural applications.", "img": "/products/sheet.jpeg" },
-      { "title": "GP Plate", "desc": "Galvanized plates offering superior corrosion resistance.", "img": "/products/gp-plate.jpeg" }
+      {
+        "title": "Suburban Family Home",
+        "desc": "4-bedroom, 2-bath home with updated kitchen and spacious yard in top-rated school district.",
+        "img": "https://source.unsplash.com/1600x900/?workspace%2Cclean%2Cbright&sig=3"
+      },
+      {
+        "title": "Downtown Urban Apartment",
+        "desc": "Modern 2-bedroom condo with floor-to-ceiling windows, amenities, and walkable neighborhood location.",
+        "img": "https://source.unsplash.com/1600x900/?professional%2Csuit%2Cconfident&sig=4"
+      },
+      {
+        "title": "Renovated Historic Property",
+        "desc": "Charming 3-bedroom Victorian home with original hardwoods, updated systems, and character throughout.",
+        "img": "https://source.unsplash.com/1600x900/?office%2Cinterior%2Cmodern&sig=5"
+      },
+      {
+        "title": "New Construction Townhome",
+        "desc": "Contemporary 3-story townhome with smart home features, rooftop deck, and energy-efficient design.",
+        "img": "https://source.unsplash.com/1600x900/?brand%2Cidentity%2Cprofessional&sig=6"
+      }
     ],
     "tubular": [
-      { "title": "M.S Pipes", "desc": "Mild steel pipes for structural and industrial piping needs.", "img": "/products/ms-pipes.jpeg" },
-      { "title": "GP Pipes", "desc": "Galvanized pipes for plumbing, fencing, and construction.", "img": "/products/gp-pipes.jpeg" },
-      { "title": "CRC Pipes", "desc": "Cold rolled pipes with smooth finish for precision use cases.", "img": "/products/crc-pipes.jpeg" }
+      {
+        "title": "Starter Home Portfolio",
+        "desc": "Affordable 2-3 bedroom homes perfect for first-time buyers in established neighborhoods.",
+        "img": "https://source.unsplash.com/1600x900/?growth%2Csuccess%2Cbusiness&sig=7"
+      },
+      {
+        "title": "Investment Property Options",
+        "desc": "Rental-ready residential properties with strong cash flow potential and appreciation prospects.",
+        "img": "https://source.unsplash.com/1600x900/?business%2Coffice%2Cprofessional&sig=0"
+      },
+      {
+        "title": "Multi-Unit Residential",
+        "desc": "Duplex and triplex properties offering owner-occupancy or investment income opportunities.",
+        "img": "https://source.unsplash.com/1600x900/?team%2Cmeeting%2Ccorporate&sig=1"
+      }
     ],
     "structural": [
-      { "title": "Angles (Z, T, Equal)", "desc": "Structural angles for framing, brackets & support structures.", "img": "/products/angles.jpeg" },
-      { "title": "Flats", "desc": "Steel flats for fabrication, gates, grills & industrial uses.", "img": "/products/flats.jpeg" },
-      { "title": "Beams", "desc": "I-beams & H-beams for load-bearing structural applications.", "img": "/products/beams.jpeg" },
-      { "title": "Channels", "desc": "C-channels and U-channels for structural frameworks.", "img": "/products/channels.jpeg" },
-      { "title": "TMT Bars", "desc": "ISI-certified TMT bars for RCC construction & reinforcement.", "img": "/products/tmt-bars.jpeg" },
-      { "title": "CRC Coils", "desc": "Cold rolled coils for manufacturing and automotive parts.", "img": "/products/crc-coils.jpeg" }
+      {
+        "title": "Commercial Office Space",
+        "desc": "Professional office suites available for lease in prime business districts with excellent visibility.",
+        "img": "https://source.unsplash.com/1600x900/?city%2Cbuilding%2Cmodern&sig=2"
+      },
+      {
+        "title": "Retail & Mixed-Use Properties",
+        "desc": "Ground-floor retail spaces and mixed-use developments in high-traffic commercial corridors.",
+        "img": "https://source.unsplash.com/1600x900/?workspace%2Cclean%2Cbright&sig=3"
+      },
+      {
+        "title": "Industrial & Warehouse Space",
+        "desc": "Flexible industrial properties with ample parking, loading areas, and modern infrastructure.",
+        "img": "https://source.unsplash.com/1600x900/?professional%2Csuit%2Cconfident&sig=4"
+      },
+      {
+        "title": "Land & Development Sites",
+        "desc": "Vacant land parcels zoned for residential, commercial, or mixed-use development projects.",
+        "img": "https://source.unsplash.com/1600x900/?office%2Cinterior%2Cmodern&sig=5"
+      },
+      {
+        "title": "Commercial Investment Buildings",
+        "desc": "Multi-tenant office and retail buildings generating stable income with growth potential.",
+        "img": "https://source.unsplash.com/1600x900/?brand%2Cidentity%2Cprofessional&sig=6"
+      },
+      {
+        "title": "Luxury Estate Properties",
+        "desc": "High-end residential estates with premium locations, architectural distinction, and premium amenities.",
+        "img": "https://source.unsplash.com/1600x900/?growth%2Csuccess%2Cbusiness&sig=7"
+      }
     ],
     "roofing": [
-      { "title": "Polycarbonate Sheets", "desc": "Transparent & UV-resistant sheets for skylights & roofing.", "img": "/products/polycarbonate-sheets.jpeg" },
-      { "title": "GI Corrugated & Perforated Sheets", "desc": "Durable galvanized sheets for industrial roofing applications.", "img": "/products/gi-corrugated-perforated-sheets.jpeg" },
-      { "title": "Colour Coated Sheets", "desc": "Pre-painted sheets available in multiple colours and profiles.", "img": "/products/colour-coated-sheets.jpeg" },
-      { "title": "Deck Sheets", "desc": "Structural deck sheets for composite flooring systems.", "img": "/products/deck-sheets.jpeg" }
+      {
+        "title": "Waterfront Properties",
+        "desc": "Lakeside and riverside homes with scenic views, waterfront access, and premium positioning.",
+        "img": "https://source.unsplash.com/1600x900/?business%2Coffice%2Cprofessional&sig=0"
+      },
+      {
+        "title": "Golf Community Residences",
+        "desc": "Properties in exclusive golf communities with resort-style amenities and lifestyle benefits.",
+        "img": "https://source.unsplash.com/1600x900/?team%2Cmeeting%2Ccorporate&sig=1"
+      },
+      {
+        "title": "Historic District Homes",
+        "desc": "Character-filled properties in established historic neighborhoods with architectural significance.",
+        "img": "https://source.unsplash.com/1600x900/?city%2Cbuilding%2Cmodern&sig=2"
+      },
+      {
+        "title": "Gated Community Properties",
+        "desc": "Secure residential communities offering privacy, amenities, and established community networks.",
+        "img": "https://source.unsplash.com/1600x900/?workspace%2Cclean%2Cbright&sig=3"
+      }
     ],
     "accessories": [
-      { "title": "Weld Mesh & Chain Link", "desc": "For fencing, partitions and reinforcement mesh applications.", "img": "/products/weld-mesh-chain-link.jpeg" },
-      { "title": "Self Tapping Screws", "desc": "High-quality screws for sheet metal and roofing fastening.", "img": "/products/self-tapping-screws.jpeg" },
-      { "title": "Binding Wire", "desc": "Annealed wire for tying reinforcement bars in construction.", "img": "/products/binding-wire.jpeg" },
-      { "title": "Cement Sheet", "desc": "Fibre cement sheets for roofing & wall cladding applications.", "img": "/products/cement-sheet.jpeg" },
-      { "title": "Plate Cutting", "desc": "Custom plasma/gas cutting service to exact dimensions.", "img": "/products/plate-cutting.jpeg" },
-      { "title": "Foundation Bolts", "desc": "Anchor bolts for machinery and structural foundation use.", "img": "/products/foundation-bolts.jpeg" }
+      {
+        "title": "Property Valuation & Market Analysis",
+        "desc": "Professional appraisals and comparative market analysis to determine accurate property values.",
+        "img": "https://source.unsplash.com/1600x900/?professional%2Csuit%2Cconfident&sig=4"
+      },
+      {
+        "title": "Home Inspection Coordination",
+        "desc": "Connections to certified inspectors for comprehensive pre-purchase property evaluations.",
+        "img": "https://source.unsplash.com/1600x900/?office%2Cinterior%2Cmodern&sig=5"
+      },
+      {
+        "title": "Title & Closing Services",
+        "desc": "Professional closing coordination and title company partnerships for seamless transactions.",
+        "img": "https://source.unsplash.com/1600x900/?brand%2Cidentity%2Cprofessional&sig=6"
+      },
+      {
+        "title": "Staging & Marketing Consultation",
+        "desc": "Expert guidance on property presentation and targeted marketing strategies to attract qualified buyers.",
+        "img": "https://source.unsplash.com/1600x900/?growth%2Csuccess%2Cbusiness&sig=7"
+      },
+      {
+        "title": "Mortgage & Financing Referrals",
+        "desc": "Connections to trusted lenders and mortgage professionals to simplify your financing process.",
+        "img": "https://source.unsplash.com/1600x900/?business%2Coffice%2Cprofessional&sig=0"
+      },
+      {
+        "title": "Relocation & Moving Services",
+        "desc": "Comprehensive relocation support including neighborhood orientation and transition coordination.",
+        "img": "https://source.unsplash.com/1600x900/?team%2Cmeeting%2Ccorporate&sig=1"
+      }
     ]
+  },
+  "cta": {
+    "label": "Get in Touch",
+    "buttonText": "Get in Touch"
   }
 }

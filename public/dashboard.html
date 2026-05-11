@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trial — Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#181818;--surface:#222;--surface2:#2A2A2A;
+  --border:rgba(245,242,238,.09);--border-hover:rgba(245,242,238,.18);
+  --text:#F5F2EE;--muted:#7A7570;--faint:#4A4540;
+  --accent:#C56A39;--accent-light:rgba(197,106,57,.12);--accent-glow:rgba(197,106,57,.18);
+  --green:#4ADE80;--green-bg:rgba(74,222,128,.1);
+  --red:#FF5F5F;--red-bg:rgba(255,95,95,.08);
+  --yellow:#F59E0B;--yellow-bg:rgba(245,158,11,.1);
+  --radius:10px;--sidebar:240px;
+}
+html,body{height:100%;font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font-family:inherit}
+
+/* ── Layout ── */
+.shell{display:flex;height:100vh;overflow:hidden}
+
+/* ── Sidebar ── */
+.sidebar{width:var(--sidebar);flex-shrink:0;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;padding:0}
+.sidebar-logo{padding:18px 20px;border-bottom:1px solid var(--border);font-family:'Syne',sans-serif;font-size:17px;font-weight:700;letter-spacing:-.02em}
+.sidebar-logo span{color:var(--accent)}
+.sidebar-site{padding:12px 20px;border-bottom:1px solid var(--border);font-size:12px}
+.sidebar-site .domain{color:var(--accent);font-weight:600;margin-bottom:2px;word-break:break-all}
+.sidebar-site a{color:var(--muted);font-size:11px;transition:color .15s}
+.sidebar-site a:hover{color:var(--text)}
+.nav{flex:1;padding:12px 10px;display:flex;flex-direction:column;gap:2px}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;cursor:pointer;font-size:13.5px;font-weight:500;color:var(--muted);transition:all .15s;border:none;background:none;width:100%;text-align:left}
+.nav-item:hover{background:var(--surface2);color:var(--text)}
+.nav-item.active{background:var(--accent-light);color:var(--text)}
+.nav-item .icon{font-size:16px;width:20px;text-align:center;flex-shrink:0}
+.sidebar-footer{padding:16px 20px;border-top:1px solid var(--border);font-size:11px;color:var(--faint)}
+
+/* ── Main ── */
+.main{flex:1;overflow-y:auto;display:flex;flex-direction:column}
+.topbar{padding:18px 28px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:var(--surface)}
+.topbar-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:700;color:var(--text)}
+.topbar-sub{font-size:12px;color:var(--muted);margin-top:1px}
+.topbar-right{display:flex;gap:10px;align-items:center}
+.content{padding:28px;flex:1}
+
+/* ── Tab panes ── */
+.tab-pane{display:none}.tab-pane.active{display:block}
+
+/* ── Cards / stats ── */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:24px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
+.stat-card .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:6px}
+.stat-card .value{font-family:'Syne',sans-serif;font-size:26px;font-weight:700;color:var(--text)}
+.stat-card .delta{font-size:11px;color:var(--green);margin-top:3px}
+
+/* ── Section card ── */
+.section-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px}
+.section-card-head{padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.section-card-head h3{font-size:13.5px;font-weight:600;color:var(--text)}
+.section-card-body{padding:16px 20px}
+
+/* ── Table ── */
+.table-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.table-toolbar{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.table-search{background:var(--surface2);border:1px solid var(--border);border-radius:7px;padding:7px 12px;color:var(--text);font-size:13px;width:220px;outline:none}
+.table-search:focus{border-color:var(--accent)}
+.tbl{width:100%;border-collapse:collapse}
+.tbl th{text-align:left;padding:10px 16px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);border-bottom:1px solid var(--border)}
+.tbl td{padding:12px 16px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:middle}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:var(--surface2)}
+
+/* ── Badges ── */
+.badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:99px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge-new{background:var(--accent-light);color:var(--accent)}
+.badge-contacted{background:var(--yellow-bg);color:var(--yellow)}
+.badge-qualified{background:rgba(139,92,246,.15);color:#A78BFA}
+.badge-booked{background:var(--green-bg);color:var(--green)}
+.badge-closed{background:rgba(255,255,255,.05);color:var(--muted)}
+
+/* ── Buttons ── */
+.btn{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all .18s}
+.btn-primary{background:var(--accent);color:var(--text)}
+.btn-primary:hover{background:#B85E30}
+.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--border-hover);color:var(--text)}
+.btn-sm{padding:6px 12px;font-size:12px}
+
+/* ── Website edit sections ── */
+.edit-sections{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.edit-row{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;display:flex;align-items:center;justify-content:space-between;transition:border-color .15s}
+.edit-row:hover{border-color:var(--border-hover)}
+.edit-row-left{display:flex;align-items:center;gap:14px}
+.edit-row-icon{width:36px;height:36px;background:var(--surface2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.edit-row-label{font-weight:600;font-size:13.5px;color:var(--text)}
+.edit-row-sub{font-size:12px;color:var(--muted)}
+
+/* ── Domain panel ── */
+.domain-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.domain-panel-head{padding:18px 20px;border-bottom:1px solid var(--border)}
+.domain-panel-head h3{font-family:'Syne',sans-serif;font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+.domain-panel-head p{font-size:12px;color:var(--muted)}
+.domain-row{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
+.domain-row:last-child{border-bottom:none}
+.domain-row .domain-name{font-weight:600;font-size:14px;color:var(--text)}
+.domain-row .domain-type{font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;background:var(--accent-light);color:var(--accent)}
+.domain-row .domain-status{font-size:11px;color:var(--green);display:flex;align-items:center;gap:5px}
+.domain-status-dot{width:7px;height:7px;border-radius:50%;background:var(--green)}
+.connect-domain-form{padding:20px;border-top:1px solid var(--border)}
+.connect-domain-form label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:8px}
+.domain-input-row{display:flex;gap:10px;margin-bottom:14px}
+.domain-input{flex:1;background:var(--surface2);border:1.5px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text);font-size:14px;outline:none;transition:border-color .2s}
+.domain-input:focus{border-color:var(--accent)}
+.domain-input::placeholder{color:var(--faint)}
+
+/* ── DNS instructions ── */
+.dns-box{background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin-top:16px;display:none}
+.dns-box.visible{display:block}
+.dns-box h4{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--muted);margin-bottom:12px}
+.dns-record{display:flex;align-items:center;gap:0;background:var(--bg);border:1px solid var(--border);border-radius:7px;overflow:hidden;margin-bottom:8px;font-size:12px;font-family:monospace}
+.dns-record .col{padding:8px 14px;border-right:1px solid var(--border)}
+.dns-record .col:last-child{border-right:none;flex:1;color:var(--accent)}
+.dns-record .col-head{font-size:10px;font-weight:700;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:1px}
+.dns-note{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
+.dns-success{background:var(--green-bg);border:1px solid rgba(74,222,128,.2);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--green);display:none}
+.dns-success.visible{display:block}
+.dns-error{background:var(--red-bg);border:1px solid rgba(255,95,95,.2);border-radius:8px;padding:12px 16px;font-size:13px;color:var(--red);margin-top:12px;display:none}
+.dns-error.visible{display:block}
+
+/* ── Misc ── */
+.page-heading{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;color:var(--text);margin-bottom:4px}
+.page-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.empty{text-align:center;padding:48px 20px;color:var(--muted);font-size:13px}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+.spinner{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);border-top-color:var(--accent);animation:spin .8s linear infinite;display:inline-block}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- ── Sidebar ── -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">v<span>AI</span></div>
+    <div class="sidebar-site">
+      <div class="domain">trial.vai.business</div>
+      <a href="/" target="_blank">View site ↗</a>
+    </div>
+    <nav class="nav">
+      <button class="nav-item active" onclick="showTab('overview', this)"><span class="icon">📊</span> Overview</button>
+      <button class="nav-item" onclick="showTab('leads', this)"><span class="icon">📥</span> Leads</button>
+      <button class="nav-item" onclick="showTab('website', this)"><span class="icon">✏️</span> Edit Website</button>
+      <button class="nav-item" onclick="showTab('settings', this)"><span class="icon">⚙️</span> Settings</button>
+    </nav>
+    <div class="sidebar-footer">Powered by vAI</div>
+  </aside>
+
+  <!-- ── Main ── -->
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="topbar-title" id="tabTitle">Overview</div>
+        <div class="topbar-sub">Trial · Real estate</div>
+      </div>
+      <div class="topbar-right">
+        <a href="/" target="_blank" class="btn btn-ghost btn-sm">View site ↗</a>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- ── Overview ── -->
+      <div class="tab-pane active" id="pane-overview">
+        <div class="page-heading">Good to see you 👋</div>
+        <div class="page-sub">Here's what's happening with Trial today.</div>
+
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="label">Total Leads</div>
+            <div class="value" id="stat-leads">0</div>
+            <div class="delta">from your website form</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">New this week</div>
+            <div class="value" id="stat-new">0</div>
+            <div class="delta">↑ check leads tab</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Site domain</div>
+            <div class="value" style="font-size:13px;margin-top:4px">trial.vai.business</div>
+            <div class="delta">Live ✓</div>
+          </div>
+          <div class="stat-card">
+            <div class="label">Last updated</div>
+            <div class="value" style="font-size:16px;margin-top:4px" id="stat-updated">—</div>
+            <div class="delta">site content</div>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <div class="section-card-head">
+            <h3>Recent Leads</h3>
+            <button class="btn btn-ghost btn-sm" onclick="showTab('leads', document.querySelector('[onclick*=leads]'))">View all →</button>
+          </div>
+          <div class="section-card-body" id="overview-leads-body">
+            <div class="empty">No leads yet — they'll appear here when visitors fill your contact form.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Leads ── -->
+      <div class="tab-pane" id="pane-leads">
+        <div class="page-heading">Leads</div>
+        <div class="page-sub">Enquiries submitted through your website contact form.</div>
+        <div class="table-wrap">
+          <div class="table-toolbar">
+            <input class="table-search" placeholder="Search leads…" oninput="filterLeads(this.value)">
+            <div style="display:flex;gap:8px" id="lead-filters">
+              <button class="btn btn-ghost btn-sm active-filter" onclick="filterByStatus('all',this)">All</button>
+              <button class="btn btn-ghost btn-sm" onclick="filterByStatus('new',this)">New</button>
+              <button class="btn btn-ghost btn-sm" onclick="filterByStatus('contacted',this)">Contacted</button>
+              <button class="btn btn-ghost btn-sm" onclick="filterByStatus('booked',this)">Booked</button>
+            </div>
+          </div>
+          <table class="tbl">
+            <thead>
+              <tr>
+                <th>Name</th><th>Contact</th><th>Message</th><th>Source</th><th>Date</th><th>Status</th><th></th>
+              </tr>
+            </thead>
+            <tbody id="leads-tbody">
+              <tr><td colspan="7" class="empty">No leads yet. Share your site to start getting enquiries.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ── Edit Website ── -->
+      <div class="tab-pane" id="pane-website">
+        <div class="page-heading">Edit Website</div>
+        <div class="page-sub">Update your site content or connect your own domain.</div>
+
+        <div class="section-card" style="margin-bottom:24px">
+          <div class="section-card-head"><h3>Website Sections</h3></div>
+          <div class="section-card-body">
+            <div class="edit-sections">
+              
+              <div class="edit-row">
+                <div class="edit-row-left">
+                  <div class="edit-row-icon">🎯</div>
+                  <div>
+                    <div class="edit-row-label">Hero Section</div>
+                    <div class="edit-row-sub">Headline, tagline, CTA button</div>
+                  </div>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="alert('Content editing coming soon — reach out to your vAI contact to update this section.')">Edit</button>
+              </div>
+              <div class="edit-row">
+                <div class="edit-row-left">
+                  <div class="edit-row-icon">🤝</div>
+                  <div>
+                    <div class="edit-row-label">About Us</div>
+                    <div class="edit-row-sub">Your story, mission and team</div>
+                  </div>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="alert('Content editing coming soon — reach out to your vAI contact to update this section.')">Edit</button>
+              </div>
+              <div class="edit-row">
+                <div class="edit-row-left">
+                  <div class="edit-row-icon">⭐</div>
+                  <div>
+                    <div class="edit-row-label">Services</div>
+                    <div class="edit-row-sub">What you offer and how you deliver value</div>
+                  </div>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="alert('Content editing coming soon — reach out to your vAI contact to update this section.')">Edit</button>
+              </div>
+              <div class="edit-row">
+                <div class="edit-row-left">
+                  <div class="edit-row-icon">💬</div>
+                  <div>
+                    <div class="edit-row-label">Testimonials</div>
+                    <div class="edit-row-sub">Client reviews and social proof</div>
+                  </div>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="alert('Content editing coming soon — reach out to your vAI contact to update this section.')">Edit</button>
+              </div>
+              <div class="edit-row">
+                <div class="edit-row-left">
+                  <div class="edit-row-icon">❓</div>
+                  <div>
+                    <div class="edit-row-label">FAQ</div>
+                    <div class="edit-row-sub">Common questions and answers</div>
+                  </div>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="alert('Content editing coming soon — reach out to your vAI contact to update this section.')">Edit</button>
+              </div>
+              <div class="edit-row">
+                <div class="edit-row-left">
+                  <div class="edit-row-icon">📍</div>
+                  <div>
+                    <div class="edit-row-label">Contact & Location</div>
+                    <div class="edit-row-sub">Address, hours, enquiry form</div>
+                  </div>
+                </div>
+                <button class="btn btn-ghost btn-sm" onclick="alert('Content editing coming soon — reach out to your vAI contact to update this section.')">Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Connect Domain ── -->
+        <div class="domain-panel">
+          <div class="domain-panel-head">
+            <h3>Domains</h3>
+            <p>Manage where your site is accessible.</p>
+          </div>
+
+          <!-- Current vAI domain -->
+          <div class="domain-row">
+            <div>
+              <div class="domain-name">trial.vai.business</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">Included with your vAI plan</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div class="domain-status"><div class="domain-status-dot"></div> Active</div>
+              <span class="domain-type">vAI</span>
+            </div>
+          </div>
+
+          <!-- Custom domain placeholder (populated from localStorage) -->
+          <div id="custom-domain-row" style="display:none" class="domain-row">
+            <div>
+              <div class="domain-name" id="custom-domain-display">—</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">Your custom domain</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px">
+              <div id="custom-domain-status" class="domain-status"><div class="domain-status-dot" style="background:var(--yellow)"></div> Pending DNS</div>
+              <span class="domain-type" style="background:rgba(139,92,246,.15);color:#A78BFA">Custom</span>
+            </div>
+          </div>
+
+          <!-- Connect form -->
+          <div class="connect-domain-form">
+            <label>Connect your own domain</label>
+            <div class="domain-input-row">
+              <input class="domain-input" id="domain-input" placeholder="e.g. www.mybakery.com or mybakery.com" type="text">
+              <button class="btn btn-primary" id="connect-btn" onclick="connectDomain()">Connect</button>
+            </div>
+
+            <!-- DNS instructions (shown after submit) -->
+            <div class="dns-box" id="dns-box">
+              <h4>Add these DNS records at your domain registrar</h4>
+              <div class="dns-record">
+                <div class="col"><span class="col-head">Type</span>CNAME</div>
+                <div class="col"><span class="col-head">Name</span><span id="dns-name">@</span></div>
+                <div class="col"><span class="col-head">Value</span>cname.vercel-dns.com</div>
+              </div>
+              <div class="dns-record">
+                <div class="col"><span class="col-head">Type</span>A</div>
+                <div class="col"><span class="col-head">Name</span>@</div>
+                <div class="col"><span class="col-head">Value</span>76.76.21.21</div>
+              </div>
+              <div class="dns-note">
+                Changes can take up to 48 hours to propagate. Once done, your site will be live at your custom domain.
+                <br>For subdomains (www), use only the CNAME record.
+              </div>
+            </div>
+
+            <div class="dns-success" id="dns-success">
+              ✓ Domain added to your project. Add the DNS records above and you're done.
+            </div>
+            <div class="dns-error" id="dns-error"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Settings ── -->
+      <div class="tab-pane" id="pane-settings">
+        <div class="page-heading">Settings</div>
+        <div class="page-sub">Your business information.</div>
+        <div class="two-col">
+          <div class="section-card">
+            <div class="section-card-head"><h3>Business</h3></div>
+            <div class="section-card-body" style="display:flex;flex-direction:column;gap:12px">
+              
+              <div>
+                <div style="font-size:11px;font-weight:600;color:var(--muted);margin-bottom:3px;text-transform:uppercase;letter-spacing:.6px">Business name</div>
+                <div style="font-size:14px;color:var(--text)">Trial</div>
+              </div>
+              <div>
+                <div style="font-size:11px;font-weight:600;color:var(--muted);margin-bottom:3px;text-transform:uppercase;letter-spacing:.6px">Industry</div>
+                <div style="font-size:14px;color:var(--text)">Real estate</div>
+              </div>
+              <div>
+                <div style="font-size:11px;font-weight:600;color:var(--muted);margin-bottom:3px;text-transform:uppercase;letter-spacing:.6px">Domain</div>
+                <div style="font-size:14px;color:var(--text)">trial.vai.business</div>
+              </div>
+            </div>
+          </div>
+          <div class="section-card">
+            <div class="section-card-head"><h3>Platform</h3></div>
+            <div class="section-card-body" style="display:flex;flex-direction:column;gap:12px">
+              
+              <div>
+                <div style="font-size:11px;font-weight:600;color:var(--muted);margin-bottom:3px;text-transform:uppercase;letter-spacing:.6px">Powered by</div>
+                <div style="font-size:14px;color:var(--text)">vAI</div>
+              </div>
+              <div>
+                <div style="font-size:11px;font-weight:600;color:var(--muted);margin-bottom:3px;text-transform:uppercase;letter-spacing:.6px">Deployed on</div>
+                <div style="font-size:14px;color:var(--text)">Vercel</div>
+              </div>
+              <div>
+                <div style="font-size:11px;font-weight:600;color:var(--muted);margin-bottom:3px;text-transform:uppercase;letter-spacing:.6px">Repository</div>
+                <div style="font-size:14px;color:var(--text)">vai-trial-mp0nrsuo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /content -->
+  </main>
+</div><!-- /shell -->
+
+<script>
+const SITE_DOMAIN = 'trial.vai.business';
+const REPO_NAME   = 'vai-trial-mp0nrsuo';
+const VAI_API_URL = 'https://www.vai.ad';
+
+// ── Tab switching ──
+const TAB_TITLES = { overview:'Overview', leads:'Leads', website:'Edit Website', settings:'Settings' };
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  document.getElementById('pane-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  document.getElementById('tabTitle').textContent = TAB_TITLES[id] || id;
+}
+
+// ── Lead storage (localStorage) ──
+function getLeads() {
+  try { return JSON.parse(localStorage.getItem('vai_leads_' + REPO_NAME) || '[]'); } catch { return []; }
+}
+function saveLeads(arr) {
+  localStorage.setItem('vai_leads_' + REPO_NAME, JSON.stringify(arr));
+}
+
+const STATUS_BADGES = {
+  new:'badge-new', contacted:'badge-contacted', qualified:'badge-qualified',
+  booked:'badge-booked', closed:'badge-closed'
+};
+const STATUS_LABELS = { new:'New', contacted:'Contacted', qualified:'Qualified', booked:'Booked', closed:'Closed' };
+const NEXT_STATUS   = { new:'contacted', contacted:'qualified', qualified:'booked', booked:'closed', closed:'new' };
+
+function renderLeads(leads) {
+  const tbody = document.getElementById('leads-tbody');
+  if (!leads.length) {
+    tbody.innerHTML = '<tr><td colspan="7" class="empty">No leads yet. Share your site to start getting enquiries.</td></tr>';
+    return;
+  }
+  tbody.innerHTML = leads.map((l, i) => `
+    <tr id="lead-row-${i}">
+      <td style="font-weight:600">${esc(l.name)}</td>
+      <td style="color:var(--muted)">${esc(l.email || '')} ${l.phone ? '<br>' + esc(l.phone) : ''}</td>
+      <td style="max-width:200px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(l.message || '—')}</td>
+      <td style="color:var(--muted)">${esc(l.source || 'Website')}</td>
+      <td style="color:var(--muted);white-space:nowrap">${esc(l.date || '')}</td>
+      <td><span class="badge ${STATUS_BADGES[l.status] || 'badge-new'}">${STATUS_LABELS[l.status] || 'New'}</span></td>
+      <td><button class="btn btn-ghost btn-sm" onclick="advanceLead(${i})">→ ${STATUS_LABELS[NEXT_STATUS[l.status]] || 'Next'}</button></td>
+    </tr>
+  `).join('');
+}
+
+function advanceLead(i) {
+  const leads = getLeads();
+  leads[i].status = NEXT_STATUS[leads[i].status] || 'new';
+  saveLeads(leads);
+  refreshUI();
+}
+
+let _searchVal = '', _statusFilter = 'all';
+function filterLeads(v) { _searchVal = v.toLowerCase(); refreshUI(); }
+function filterByStatus(s, btn) {
+  _statusFilter = s;
+  document.querySelectorAll('#lead-filters .btn').forEach(b => b.style.background = '');
+  if (btn) btn.style.background = 'var(--surface2)';
+  refreshUI();
+}
+
+function refreshUI() {
+  let leads = getLeads();
+  // Update stats
+  document.getElementById('stat-leads').textContent = leads.length;
+  const weekAgo = Date.now() - 7 * 86400000;
+  document.getElementById('stat-new').textContent = leads.filter(l => new Date(l.date).getTime() > weekAgo).length;
+  document.getElementById('stat-updated').textContent = new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short'});
+  // Overview recent leads
+  const overviewBody = document.getElementById('overview-leads-body');
+  const recent = [...leads].reverse().slice(0, 5);
+  overviewBody.innerHTML = recent.length
+    ? recent.map(l => `<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)"><div><div style="font-weight:600;font-size:13px">${esc(l.name)}</div><div style="color:var(--muted);font-size:12px">${esc(l.email || '')} · ${esc(l.date || '')}</div></div><span class="badge ${STATUS_BADGES[l.status] || 'badge-new'}">${STATUS_LABELS[l.status] || 'New'}</span></div>`).join('')
+    : '<div class="empty">No leads yet.</div>';
+  // Leads table
+  let filtered = leads.filter(l => {
+    const matchSearch = !_searchVal || Object.values(l).join(' ').toLowerCase().includes(_searchVal);
+    const matchStatus = _statusFilter === 'all' || l.status === _statusFilter;
+    return matchSearch && matchStatus;
+  });
+  renderLeads(filtered.reverse());
+  // Custom domain row
+  const cd = localStorage.getItem('vai_custom_domain_' + REPO_NAME);
+  if (cd) {
+    document.getElementById('custom-domain-display').textContent = cd;
+    document.getElementById('custom-domain-row').style.display = 'flex';
+  }
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Connect Domain ──
+async function connectDomain() {
+  const input = document.getElementById('domain-input');
+  const btn   = document.getElementById('connect-btn');
+  const domain = input.value.trim().replace(/^https?:\/\//,'').replace(/\/.*$/,'');
+  if (!domain || !domain.includes('.')) { alert('Please enter a valid domain.'); return; }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> Connecting…';
+  document.getElementById('dns-error').classList.remove('visible');
+  document.getElementById('dns-success').classList.remove('visible');
+
+  try {
+    const res  = await fetch(VAI_API_URL + '/api/connect-domain', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ repoName: REPO_NAME, domain }),
+    });
+    const data = await res.json();
+
+    if (data.success) {
+      // Show DNS instructions
+      document.getElementById('dns-name').textContent = domain.startsWith('www.') ? 'www' : '@';
+      document.getElementById('dns-box').classList.add('visible');
+      document.getElementById('dns-success').classList.add('visible');
+      // Persist custom domain
+      localStorage.setItem('vai_custom_domain_' + REPO_NAME, domain);
+      refreshUI();
+    } else {
+      const errEl = document.getElementById('dns-error');
+      errEl.textContent = data.error || 'Failed to connect domain. Please try again.';
+      errEl.classList.add('visible');
+    }
+  } catch {
+    const errEl = document.getElementById('dns-error');
+    errEl.textContent = 'Connection error. Check your internet and try again.';
+    errEl.classList.add('visible');
+  }
+
+  btn.disabled = false;
+  btn.innerHTML = 'Connect';
+}
+
+// ── Listen for leads posted from contact form ──
+// Contact form should postMessage: { type:'vai-lead', name, email, phone, message }
+window.addEventListener('message', e => {
+  if (!e.data || e.data.type !== 'vai-lead') return;
+  const leads = getLeads();
+  leads.push({ ...e.data, status:'new', date: new Date().toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}), source:'Website Form' });
+  saveLeads(leads);
+  refreshUI();
+});
+
+// Init
+refreshUI();
+</script>
+</body>
+</html>
