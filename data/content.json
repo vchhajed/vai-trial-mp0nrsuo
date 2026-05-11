@@ -1,0 +1,222 @@
+{
+  "navbar": {
+    "logoTagline": "The Steel Hub",
+    "navLinks": [
+      { "href": "#about", "label": "About" },
+      { "href": "#products", "label": "Products" },
+      { "href": "#brands", "label": "Brands" },
+      { "href": "#cases", "label": "Case Studies" },
+      { "href": "#clients", "label": "Clients" }
+    ],
+    "ctaLabel": "Contact Us"
+  },
+  "categories": [
+    {
+      "label": "Flat Products",
+      "title": "Plates, Sheets\n& Coils",
+      "img": "/products/ms-hrc-plate.jpeg",
+      "desc": "HRC plates, CRC sheets, GP plates and coils for heavy fabrication."
+    },
+    {
+      "label": "Structural Steel",
+      "title": "Angles, Beams\n& Channels",
+      "img": "/products/beams.jpeg",
+      "desc": "I-beams, H-beams, angles, channels and TMT bars for load-bearing structures."
+    },
+    {
+      "label": "Roofing & Sheets",
+      "title": "Roofing &\nCladding",
+      "img": "/products/colour-coated-sheets.jpeg",
+      "desc": "GI corrugated, colour-coated, polycarbonate and deck sheets for all roofing needs."
+    }
+  ],
+  "theme": {
+    "primary": "#4A6FA5",
+    "primaryDark": "#2D5585",
+    "secondary": "#1B2A3B",
+    "secondaryLight": "#243550"
+  },
+  "branding": {
+    "logoUrl": "",
+    "logoText": "NAMO STEEL",
+    "headingFont": "Inter",
+    "bodyFont": "Inter",
+    "selectedPalette": "steel-midnight"
+  },
+  "hero": {
+    "badge": "SINCE 1995",
+    "title": "Steel Solutions for\nSolid Foundations.",
+    "subtitle": "Crafting the Backbone of Industry.",
+    "phone": "+91 98604 89490",
+    "ctaText": "Explore Products",
+    "stats": [
+      { "num": "30+", "label": "Years Experience" },
+      { "num": "15+", "label": "Brands" },
+      { "num": "ISI", "label": "Certified Products" }
+    ]
+  },
+  "about": {
+    "sectionLabel": "About Our Company",
+    "heading": "Your Trusted Partner in Steel & Structure.",
+    "description": "We are trusted dealers in construction and industrial steel products, serving the industry for over 30 years. Known for quality, reliability, and competitive pricing, we supply ISI-certified steel with assured strength and precision. Backed by strong manufacturer tie-ups, we ensure timely delivery and customer satisfaction across every order.",
+    "checklist": [
+      "ISI-Certified, High-Strength Products",
+      "Wide Product Range",
+      "30+ Years of Industry Trust"
+    ],
+    "vision": "To deliver superior-quality steel solutions that consistently exceed customer expectations through innovation, service excellence, and long-term partnerships.",
+    "mission": "To build lasting relationships by offering exceptional service, embracing technology, and supporting every customer's steel requirement with integrity and expertise."
+  },
+  "why": {
+    "sectionLabel": "Why Choose Us?",
+    "heading": "Reasons to Partner with Namo Steel",
+    "items": [
+      { "title": "30+ Years of Industry Experience" },
+      { "title": "ISI-Certified, High-Strength Products" },
+      { "title": "Strong Manufacturer Partnerships" },
+      { "title": "Fast, On-Time Delivery" },
+      { "title": "Competitive Pricing" },
+      { "title": "Wide Product Range Under One Roof" }
+    ]
+  },
+  "certifications": {
+    "sectionLabel": "Our Certifications & Partners",
+    "heading": "Quality You Can Trust",
+    "items": [
+      { "num": "01", "title": "All Products are ISI Certified" },
+      { "num": "02", "title": "Sourced from Top-Tier Manufacturers" },
+      { "num": "03", "title": "Strict Quality Control for Strength, Shape, Gauge & Bonding" }
+    ]
+  },
+  "services": {
+    "sectionLabel": "Service Excellence",
+    "heading": "Delivering Beyond Expectations",
+    "items": [
+      {
+        "title": "Fast & On-Time Delivery",
+        "desc": "We understand project timelines. Our logistics ensure your material arrives exactly when you need it."
+      },
+      {
+        "title": "High Accuracy in Order Fulfillment",
+        "desc": "Precise quantities, correct grades, and verified dimensions on every single order."
+      },
+      {
+        "title": "Technical Support & Customized Solutions",
+        "desc": "Our experts help you choose the right product and can supply made-to-order specifications."
+      }
+    ]
+  },
+  "brands": [
+    "ROOPAM STEEL", "TATA STEEL", "SAIL (सेल)", "VIZAG STEEL",
+    "PUSHPA TMX 500", "RAJURI STEEL", "BHUSHAN POWER & STEEL",
+    "SHREE OM 500 TMT", "RAMA STEEL", "ICON STEEL TMT REBAR",
+    "APL APOLLO", "UMA 550 TMT BARS", "KALIKA STEEL", "GSPL 500 TMT", "JSW STEEL"
+  ],
+  "caseStudies": [
+    {
+      "num": "01",
+      "title": "Industrial Packers",
+      "client": "Client: Gaurav",
+      "project": "Custom Skids from Chequered Plates",
+      "desc": "We designed and supplied custom-made skids from chequered plates to securely transport engines. The skids were precisely engineered for a perfect fit, ensuring safe transport and reusability for up to 5 years. With a 7-year track record of supplying quality raw materials like channels & plates, we delivered a durable, returnable solution that met all requirements for accuracy, strength, and ease of handling."
+    },
+    {
+      "num": "02",
+      "title": "Omkar Industries",
+      "client": "Client: Omkar Joshi (Owner)",
+      "project": "Custom-Dimension CRC Sheets",
+      "desc": "Omkar Industries required made-to-order CRC sheets in precise dimensions: 435 × 1250 × 1.5 mm and 353 × 1250 × 1.5 mm. They needed sheets with exact measurements, high-quality finish, scratch-free surfaces, no rust, and secure packaging. We delivered perfectly matched material meeting all quality standards."
+    },
+    {
+      "num": "03",
+      "title": "Patil Automation Limited",
+      "client": "6-Year Partnership",
+      "project": "Plates, Angles, Channels & CRC Sheets",
+      "desc": "Referred by BNI member Shashi Ji, we began supplying plates, angles, channels, CRC sheets and more to Patil Automation Limited six years ago. Our quality and timely service have made this a lasting partnership that continues today."
+    },
+    {
+      "num": "04",
+      "title": "Convill Landmark",
+      "client": "₹10 Crore Project",
+      "project": "PMC Bars for Entire Development",
+      "desc": "Through a strong referral from BNI members Kareem Chambe and Omkar, we connected with Convill Landmark. This recommendation led to a ₹10 crore project, where we supplied PMC bars for the entire development."
+    },
+    {
+      "num": "05",
+      "title": "Doodh Techno Projects",
+      "client": "3-Year Partnership",
+      "project": "TMT Bars & Structural Steel",
+      "desc": "Referred by member Shubham, we have been supplying TMT bars and structural steel to Doodh Techno Projects for the past three years, ensuring consistent quality and timely delivery."
+    },
+    {
+      "num": "06",
+      "title": "Praveen Rawat & Associates",
+      "client": "3-Year Partnership",
+      "project": "TMT Bars for Modern College Contractors",
+      "desc": "Referred by member Sandeep Shah, we began supplying TMT bars to Praveen Rawat and Associates, contractors for Modern College, for the past three years."
+    }
+  ],
+  "clients": [
+    "Abhiyanta PMC Pvt Ltd", "Matchwell Engineering Pvt Ltd",
+    "Darsheel Construction", "Mahati Industries Pvt Ltd",
+    "Elements Technofabs Pvt Ltd", "Omkar Industries",
+    "Konbil Landmarks", "Patil Automation",
+    "Industrial Packers", "Pravin Raut & Associates",
+    "Innoova Construction", "Q Point Engineering",
+    "Surich Industries", "Scon Projects"
+  ],
+  "contact": {
+    "sectionLabel": "Get In Touch",
+    "heading": "Let's Build Something Strong Together",
+    "subheading": "Reach out to us for inquiries, quotes, or customized steel solutions. We're ready to serve your project needs.",
+    "phone": "+91 98604 89490",
+    "email": "namotradelink@gmail.com",
+    "address": "Office No. 801, Apex Business Court,\nNear Gangadham, Pune 411037",
+    "businessType": "Iron & Steel Merchants"
+  },
+  "footer": {
+    "brandName": "NAMO STEEL",
+    "tagline": "Trusted dealers in construction and industrial steel products since 1995. Serving the industry with quality, reliability, and competitive pricing.",
+    "presentedBy": "Pratik Khivsara",
+    "presentedEmail": "namotradelink@gmail.com",
+    "presentedPhone": "+91 98604 89490",
+    "copyright": "© 2025 Namo Steel. All rights reserved. | Iron & Steel Merchants Since 1995"
+  },
+  "products": {
+    "sectionLabel": "Our Product Range",
+    "heading": "Steel Solutions for Every Need",
+    "flat": [
+      { "title": "M.S-HRC Plate", "desc": "Hot rolled coil plates for heavy construction & fabrication.", "img": "/products/ms-hrc-plate.jpeg" },
+      { "title": "CRC Plate", "desc": "Cold rolled plates with smooth finish and precision thickness.", "img": "/products/crc-plate.jpeg" },
+      { "title": "Sheet", "desc": "Versatile steel sheets for industrial and structural applications.", "img": "/products/sheet.jpeg" },
+      { "title": "GP Plate", "desc": "Galvanized plates offering superior corrosion resistance.", "img": "/products/gp-plate.jpeg" }
+    ],
+    "tubular": [
+      { "title": "M.S Pipes", "desc": "Mild steel pipes for structural and industrial piping needs.", "img": "/products/ms-pipes.jpeg" },
+      { "title": "GP Pipes", "desc": "Galvanized pipes for plumbing, fencing, and construction.", "img": "/products/gp-pipes.jpeg" },
+      { "title": "CRC Pipes", "desc": "Cold rolled pipes with smooth finish for precision use cases.", "img": "/products/crc-pipes.jpeg" }
+    ],
+    "structural": [
+      { "title": "Angles (Z, T, Equal)", "desc": "Structural angles for framing, brackets & support structures.", "img": "/products/angles.jpeg" },
+      { "title": "Flats", "desc": "Steel flats for fabrication, gates, grills & industrial uses.", "img": "/products/flats.jpeg" },
+      { "title": "Beams", "desc": "I-beams & H-beams for load-bearing structural applications.", "img": "/products/beams.jpeg" },
+      { "title": "Channels", "desc": "C-channels and U-channels for structural frameworks.", "img": "/products/channels.jpeg" },
+      { "title": "TMT Bars", "desc": "ISI-certified TMT bars for RCC construction & reinforcement.", "img": "/products/tmt-bars.jpeg" },
+      { "title": "CRC Coils", "desc": "Cold rolled coils for manufacturing and automotive parts.", "img": "/products/crc-coils.jpeg" }
+    ],
+    "roofing": [
+      { "title": "Polycarbonate Sheets", "desc": "Transparent & UV-resistant sheets for skylights & roofing.", "img": "/products/polycarbonate-sheets.jpeg" },
+      { "title": "GI Corrugated & Perforated Sheets", "desc": "Durable galvanized sheets for industrial roofing applications.", "img": "/products/gi-corrugated-perforated-sheets.jpeg" },
+      { "title": "Colour Coated Sheets", "desc": "Pre-painted sheets available in multiple colours and profiles.", "img": "/products/colour-coated-sheets.jpeg" },
+      { "title": "Deck Sheets", "desc": "Structural deck sheets for composite flooring systems.", "img": "/products/deck-sheets.jpeg" }
+    ],
+    "accessories": [
+      { "title": "Weld Mesh & Chain Link", "desc": "For fencing, partitions and reinforcement mesh applications.", "img": "/products/weld-mesh-chain-link.jpeg" },
+      { "title": "Self Tapping Screws", "desc": "High-quality screws for sheet metal and roofing fastening.", "img": "/products/self-tapping-screws.jpeg" },
+      { "title": "Binding Wire", "desc": "Annealed wire for tying reinforcement bars in construction.", "img": "/products/binding-wire.jpeg" },
+      { "title": "Cement Sheet", "desc": "Fibre cement sheets for roofing & wall cladding applications.", "img": "/products/cement-sheet.jpeg" },
+      { "title": "Plate Cutting", "desc": "Custom plasma/gas cutting service to exact dimensions.", "img": "/products/plate-cutting.jpeg" },
+      { "title": "Foundation Bolts", "desc": "Anchor bolts for machinery and structural foundation use.", "img": "/products/foundation-bolts.jpeg" }
+    ]
+  }
+}
